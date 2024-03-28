@@ -1,0 +1,49 @@
+# File Creation
+def create_file():
+    try:
+        with open("my_file.txt", "w") as file:
+            file.write("Hello!!\n")
+            file.write("+254\n")
+            file.write(" I am a female, 22 years old\n")
+        print("File 'my_file.txt' created successfully.")
+    except FileNotFoundError:
+        print("Error: File not found.")
+    except PermissionError:
+        print("Error: Permission denied.")
+
+# File Reading and Display
+def read_file():
+    try:
+        with open("my_file.txt", "r") as file:
+            file_content = file.read()
+            print("File Contents:")
+            print(file_content)
+    except FileNotFoundError:
+        print("Error: File not found.")
+    except PermissionError:
+        print("Error: Permission denied.")
+
+# File Appending
+def append_to_file():
+    try:
+        with open("my_file.txt", "a") as file:
+            file.write("Appending line 1.\n")
+            file.write("Appending line 2.\n")
+            file.write("Appending line 3.\n")
+        print("Three lines appended to 'my_file.txt' successfully.")
+    except FileNotFoundError:
+        print("Error: File not found.")
+    except PermissionError:
+        print("Error: Permission denied.")
+    except Exception as e:
+        print("An error occurred:", e)
+
+if __name__ == "__main__":
+    # File Creation
+    create_file()
+
+    # File Reading and Display
+    read_file()
+
+    # File Appending
+    append_to_file()
